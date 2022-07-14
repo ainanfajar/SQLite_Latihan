@@ -26,6 +26,7 @@ class _SqliteAppState extends State<SqliteApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        // backgroundColor: Colors.black,
         appBar: AppBar(
           title: TextField(
             decoration: const InputDecoration(
@@ -33,6 +34,7 @@ class _SqliteAppState extends State<SqliteApp> {
             ),
             controller: textController,
           ),
+          backgroundColor: Colors.green,
         ),
         body: Center(
           child: FutureBuilder<List<Grocery>>(
@@ -78,6 +80,7 @@ class _SqliteAppState extends State<SqliteApp> {
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
+          backgroundColor: Colors.green,
           onPressed: () async {
             selectedId != null
                 ? await DatabaseHelper.instance.update(
